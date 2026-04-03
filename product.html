@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax | Cozy Relaxer Model X</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#0284c7', accent: '#f59e0b' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+    
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-secondary flex items-center gap-2">
+                <i class="fa-solid fa-water"></i> AquaRelax
+            </a>
+            <nav class="hidden md:flex gap-6 font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="category.html" class="text-primary transition-colors">Hot Tubs</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="my_account.html" class="text-gray-600 hover:text-primary"><i class="fa-regular fa-user text-xl"></i></a>
+                <a href="cart.html" class="text-gray-600 hover:text-primary relative">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-28 pb-20">
+        <div class="container mx-auto px-4">
+            
+            <div class="text-sm text-gray-500 mb-6">
+                <a href="index.html" class="hover:text-primary">Home</a> > <a href="category.html" class="hover:text-primary">Hot Tubs</a> > <span class="text-gray-800">Cozy Relaxer Model X</span>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Product Images -->
+                    <div>
+                        <div class="rounded-xl overflow-hidden mb-4 bg-gray-100 flex items-center justify-center h-96">
+                            <img id="main-product-img" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800" alt="Hot Tub" class="w-full h-full object-cover">
+                        </div>
+                        <div class="grid grid-cols-4 gap-4">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=200" alt="Thumb" class="rounded-lg cursor-pointer border-2 border-primary w-full h-20 object-cover">
+                            <img src="https://images.unsplash.com/photo-1510006733918-24cc54181fbd?auto=format&fit=crop&q=80&w=200" alt="Thumb" class="rounded-lg cursor-pointer border-2 border-transparent hover:border-primary transition-colors w-full h-20 object-cover opacity-70 hover:opacity-100">
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div>
+                        <div class="inline-block bg-accent/10 text-accent font-bold px-3 py-1 rounded-full text-xs mb-3">Best Seller</div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-3 text-gray-800">Cozy Relaxer Model X</h1>
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="text-accent text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm">(42 Customer Reviews)</span>
+                        </div>
+                        <div class="flex items-end gap-3 mb-6">
+                            <span class="text-4xl font-bold text-gray-900">$3,999</span>
+                            <span class="text-xl text-gray-400 line-through mb-1">$4,500</span>
+                        </div>
+                        <p class="text-gray-600 mb-8 leading-relaxed">The Cozy Relaxer Model X is the perfect starter hot tub for couples and small families. Enjoy 25 active hydrotherapy jets, LED mood lighting, and an energy-efficient heating system.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-4">
+                                <span class="font-semibold w-24">Cabinet:</span>
+                                <div class="flex gap-2">
+                                    <button class="w-8 h-8 rounded-full bg-gray-800 ring-2 ring-offset-2 ring-primary"></button>
+                                    <button class="w-8 h-8 rounded-full bg-orange-800 ring-2 ring-offset-2 ring-transparent opacity-60"></button>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="font-semibold w-24">Quantity:</span>
+                                <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden w-32">
+                                    <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors">-</button>
+                                    <input type="number" value="1" class="w-full text-center outline-none border-x border-gray-300 py-2">
+                                    <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <a href="cart.html" class="flex-1 bg-primary hover:bg-secondary text-white font-bold py-4 rounded-xl text-center shadow-lg transition-transform transform hover:-translate-y-1"><i class="fa-solid fa-cart-shopping mr-2"></i> Add to Cart</a>
+                            <button class="w-14 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-xl flex items-center justify-center transition-colors"><i class="fa-regular fa-heart text-xl"></i></button>
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-100 grid grid-cols-2 gap-4 text-sm text-gray-600">
+                            <div><i class="fa-solid fa-truck text-primary mr-2"></i> Free Shipping</div>
+                            <div><i class="fa-solid fa-shield-halved text-primary mr-2"></i> 5 Year Warranty</div>
+                            <div><i class="fa-solid fa-rotate-left text-primary mr-2"></i> 30-Day Returns</div>
+                            <div><i class="fa-solid fa-headphones text-primary mr-2"></i> 24/7 Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="bg-white rounded-2xl shadow-sm p-2 mb-12">
+                <div class="flex border-b">
+                    <button class="tab-btn px-6 py-4 font-bold text-blue-600 border-b-2 border-blue-600 focus:outline-none" data-target="desc-tab">Description</button>
+                    <button class="tab-btn px-6 py-4 font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-700 focus:outline-none" data-target="spec-tab">Specifications</button>
+                    <button class="tab-btn px-6 py-4 font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-700 focus:outline-none" data-target="rev-tab">Reviews (42)</button>
+                </div>
+                <div class="p-6 md:p-8">
+                    <div id="desc-tab" class="tab-content text-gray-600 leading-relaxed">
+                        <p class="mb-4">Enhance your backyard with the Cozy Relaxer Model X. Designed for comfort and durability, this hot tub offers a premium hydrotherapy experience with 25 strategically placed jets to target all your stress points.</p>
+                        <p>Constructed with high-grade acrylic and insulated with eco-friendly foam, the Model X retains heat efficiently, keeping your energy bills low. The intuitive digital control panel makes adjusting temperature and jets effortless.</p>
+                    </div>
+                    <div id="spec-tab" class="tab-content hidden text-gray-600">
+                        <table class="w-full max-w-2xl text-left border-collapse">
+                            <tr class="border-b"><th class="py-3 font-semibold w-1/3">Dimensions</th><td class="py-3">78" x 78" x 36"</td></tr>
+                            <tr class="border-b"><th class="py-3 font-semibold">Weight (Empty)</th><td class="py-3">450 lbs</td></tr>
+                            <tr class="border-b"><th class="py-3 font-semibold">Capacity</th><td class="py-3">2-3 Adults</td></tr>
+                            <tr class="border-b"><th class="py-3 font-semibold">Water Capacity</th><td class="py-3">300 Gallons</td></tr>
+                            <tr class="border-b"><th class="py-3 font-semibold">Jets</th><td class="py-3">25 Stainless Steel</td></tr>
+                        </table>
+                    </div>
+                    <div id="rev-tab" class="tab-content hidden">
+                        <p class="text-gray-600 mb-6">Customer reviews will populate here.</p>
+                        <button class="bg-white border border-primary text-primary px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">Write a Review</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-water text-primary"></i> AquaRelax
+            </a>
+            <p class="mb-4">&copy; 2026 AquaRelax Hot Tubs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

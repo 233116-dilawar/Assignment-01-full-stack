@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax | Terms & Conditions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#0284c7', accent: '#f59e0b' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+    
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-secondary flex items-center gap-2">
+                <i class="fa-solid fa-water"></i> AquaRelax
+            </a>
+            <nav class="hidden md:flex gap-6 font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="category.html" class="hover:text-primary transition-colors">Hot Tubs</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="my_account.html" class="text-gray-600 hover:text-primary"><i class="fa-regular fa-user text-xl"></i></a>
+                <a href="cart.html" class="text-gray-600 hover:text-primary relative">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-20">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-4xl font-bold mb-8 text-center text-gray-900">Terms & Conditions</h1>
+            
+            <div class="bg-white rounded-2xl shadow-sm p-8 md:p-12 prose prose-blue max-w-none">
+                <p class="text-gray-500 mb-8 border-b pb-4">Last Updated: April 3, 2026</p>
+                
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Agreement to Terms</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">By accessing or using our websites, applications, and other products or services, you agree to be bound by these Terms and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">2. Use License</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">Permission is granted to temporarily download one copy of the materials (information or software) on AquaRelax's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+                <ul class="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                    <li>modify or copy the materials;</li>
+                    <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                    <li>attempt to decompile or reverse engineer any software contained on AquaRelax's website;</li>
+                    <li>remove any copyright or other proprietary notations from the materials; or</li>
+                    <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">3. Sales, Deliveries and Warranties</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">All hot tub deliveries require proper access and preparation, which is the sole responsibility of the buyer. AquaRelax offers a standard 5-year warranty on the shell and 2-year warranty on plumbing, subject to proper maintenance as outlined in the user manual.</p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">4. Refunds and Returns</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">You may return unused, unassembled products in original packaging within 30 days for a full refund (minus shipping and restocking fees). Custom or used hot tubs cannot be returned unless defective under warranty.</p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">5. Disclaimer</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">The materials on AquaRelax's website are provided on an 'as is' basis. AquaRelax makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-water text-primary"></i> AquaRelax
+            </a>
+            <p class="mb-4">&copy; 2026 AquaRelax Hot Tubs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax | Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#0284c7', accent: '#f59e0b' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+    
+    <!-- Navbar Minimal -->
+    <header class="bg-white shadow-sm border-b py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center text-center">
+            <a href="index.html" class="text-2xl font-bold text-secondary flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-water"></i> AquaRelax Checkout
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-10 pb-20">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Secure Checkout</h1>
+            
+            <form class="flex flex-col lg:flex-row gap-8 validate-form" action="order_summary.html" method="GET">
+                <!-- Checkout Form -->
+                <div class="w-full lg:w-2/3 space-y-6">
+                    
+                    <!-- Customer Info -->
+                    <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+                        <h2 class="text-xl font-bold mb-6 border-b pb-2 flex items-center gap-2"><i class="fa-regular fa-user text-primary"></i> Customer Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-gray-800">
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-gray-800">
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-gray-800">
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Info -->
+                    <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+                        <h2 class="text-xl font-bold mb-6 border-b pb-2 flex items-center gap-2"><i class="fa-solid fa-truck-fast text-primary"></i> Shipping Address</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Address Line 1</label>
+                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="md:col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">City</label>
+                                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                    <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                                </div>
+                                <div class="md:col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">State / Province</label>
+                                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                    <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                                </div>
+                                <div class="md:col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Zip / Postal Code</label>
+                                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                    <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Info -->
+                    <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+                        <h2 class="text-xl font-bold mb-6 border-b pb-2 flex items-center gap-2"><i class="fa-regular fa-credit-card text-primary"></i> Payment Method</h2>
+                        
+                        <div class="mb-6 space-y-3">
+                            <label class="flex items-center gap-3 p-4 border border-primary rounded-lg bg-primary/5 cursor-pointer">
+                                <input type="radio" name="payment_method" checked class="w-5 h-5 accent-primary">
+                                <span class="font-semibold text-gray-800">Credit / Debit Card</span>
+                                <div class="ml-auto text-gray-500"><i class="fa-brands fa-cc-visa text-xl mx-1"></i> <i class="fa-brands fa-cc-mastercard text-xl mx-1"></i></div>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="radio" name="payment_method" class="w-5 h-5 accent-primary">
+                                <span class="font-semibold text-gray-800">PayPal</span>
+                                <div class="ml-auto text-[#003087]"><i class="fa-brands fa-paypal text-xl"></i></div>
+                            </label>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                                <div class="relative">
+                                    <input type="text" required placeholder="0000 0000 0000 0000" class="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                    <i class="fa-regular fa-credit-card absolute right-3 top-3 text-gray-400"></i>
+                                </div>
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Expiration Date</label>
+                                    <input type="text" required placeholder="MM/YY" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                    <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                                    <div class="relative">
+                                        <input type="text" required placeholder="123" class="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                                        <i class="fa-solid fa-circle-info absolute right-3 top-3 text-gray-400"></i>
+                                    </div>
+                                    <p class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Order Panel -->
+                <div class="w-full lg:w-1/3">
+                    <div class="bg-gray-100 rounded-2xl p-6 md:p-8 sticky top-10">
+                        <h3 class="font-bold text-xl mb-4 border-b border-gray-300 pb-4">Your Order</h3>
+                        
+                        <div class="space-y-4 mb-6 pt-2">
+                            <!-- Item -->
+                            <div class="flex justify-between items-center">
+                                <div class="flex gap-3 items-center">
+                                    <div class="relative">
+                                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=100" class="w-16 h-16 rounded-lg object-cover">
+                                        <span class="absolute -top-2 -right-2 bg-gray-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">1</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-sm text-gray-800">Cozy Relaxer Model X</h4>
+                                    </div>
+                                </div>
+                                <span class="font-medium text-gray-700">$3,999.00</span>
+                            </div>
+                             <!-- Item -->
+                             <div class="flex justify-between items-center">
+                                <div class="flex gap-3 items-center">
+                                    <div class="relative">
+                                        <img src="https://images.unsplash.com/photo-1510006733918-24cc54181fbd?auto=format&fit=crop&q=80&w=100" class="w-16 h-16 rounded-lg object-cover">
+                                        <span class="absolute -top-2 -right-2 bg-gray-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">1</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-sm text-gray-800">Premium Thermal Cover</h4>
+                                    </div>
+                                </div>
+                                <span class="font-medium text-gray-700">$299.00</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-6 font-medium text-gray-600 border-t border-gray-300 pt-4 text-sm">
+                            <div class="flex justify-between">
+                                <span>Subtotal</span>
+                                <span class="text-gray-900">$4,298.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Shipping</span>
+                                <span class="text-green-600 font-bold">Free</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Taxes</span>
+                                <span class="text-gray-900">$343.84</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-300 pt-4 mb-6">
+                            <div class="flex justify-between items-end">
+                                <span class="font-bold text-lg text-gray-800">Total</span>
+                                <span class="font-bold text-3xl text-gray-900">$4,641.84</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-1 text-lg flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-lock"></i> Pay Now
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax | Categories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#0284c7', accent: '#f59e0b' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-secondary flex items-center gap-2">
+                <i class="fa-solid fa-water"></i> AquaRelax
+            </a>
+            <nav class="hidden md:flex gap-6 font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="category.html" class="text-primary transition-colors">Hot Tubs</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="my_account.html" class="text-gray-600 hover:text-primary"><i
+                        class="fa-regular fa-user text-xl"></i></a>
+                <a href="cart.html" class="text-gray-600 hover:text-primary relative">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl"><i
+                        class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full left-0 border-t">
+            <div class="flex flex-col p-4 font-medium">
+                <a href="index.html" class="py-2">Home</a>
+                <a href="category.html" class="py-2 text-primary">Hot Tubs</a>
+                <a href="about.html" class="py-2">About Us</a>
+                <a href="contact.html" class="py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-28 pb-20">
+        <div class="bg-gray-900 text-white py-12 mb-12">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl font-bold mb-4">Shop Hot Tubs</h1>
+                <p class="text-lg text-gray-300">Find the perfect hot tub for your space and lifestyle.</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 flex flex-col md:flex-row gap-8">
+            <!-- Sidebar / Filters -->
+            <aside class="w-full md:w-1/4">
+                <div class="bg-white p-6 rounded-2xl shadow-md sticky top-28">
+                    <h3 class="font-bold text-xl mb-4 border-b pb-2">Filters</h3>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3">Capacity</h4>
+                        <div class="space-y-2">
+                            <label
+                                class="flex items-center gap-2 text-gray-600 hover:text-primary cursor-pointer"><input
+                                    type="checkbox" class="accent-primary"> 2-3 Persons</label>
+                            <label
+                                class="flex items-center gap-2 text-gray-600 hover:text-primary cursor-pointer"><input
+                                    type="checkbox" class="accent-primary"> 4-5 Persons</label>
+                            <label
+                                class="flex items-center gap-2 text-gray-600 hover:text-primary cursor-pointer"><input
+                                    type="checkbox" class="accent-primary"> 6+ Persons</label>
+                            <label
+                                class="flex items-center gap-2 text-gray-600 hover:text-primary cursor-pointer"><input
+                                    type="checkbox" class="accent-primary"> Swim Spas</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-3">Price Range</h4>
+                        <input type="range" class="w-full accent-primary" min="1000" max="15000" value="15000">
+                        <div class="flex justify-between text-sm text-gray-500 mt-2">
+                            <span>$1,000</span>
+                            <span>$15,000+</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 rounded-lg transition-colors">Apply
+                        Filters</button>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="w-full md:w-3/4">
+                <div class="flex justify-between items-center mb-6">
+                    <p class="text-gray-600">Showing 1-6 of 24 results</p>
+                    <select class="border border-gray-300 rounded-lg px-4 py-2 outline-none focus:border-primary">
+                        <option>Sort by: Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest Arrivals</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product Item 1 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=600"
+                                alt="Product"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                                Sale</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs text-gray-500 mb-1">2-3 Persons</div>
+                            <h3 class="text-lg font-bold mb-2"><a href="product.html"
+                                    class="hover:text-primary transition-colors">Cozy Relaxer Model X</a></h3>
+                            <div class="flex items-center gap-1 text-accent mb-3 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i>
+                                <span class="text-gray-500 ml-1">(42)</span>
+                            </div>
+                            <div class="flex justify-between items-center border-t pt-4">
+                                <div>
+                                    <span class="text-gray-400 line-through text-sm mr-1">$4,500</span>
+                                    <span class="text-xl font-bold text-gray-800">$3,999</span>
+                                </div>
+                                <a href="product.html"
+                                    class="bg-primary/10 text-primary hover:bg-primary hover:text-white p-2 rounded-lg transition-colors"><i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Item 2 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1510006733918-24cc54181fbd?auto=format&fit=crop&q=80&w=600"
+                                alt="Product"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs text-gray-500 mb-1">4-5 Persons</div>
+                            <h3 class="text-lg font-bold mb-2"><a href="product.html"
+                                    class="hover:text-primary transition-colors">Family Oasis JetTub</a></h3>
+                            <div class="flex items-center gap-1 text-accent mb-3 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span class="text-gray-500 ml-1">(89)</span>
+                            </div>
+                            <div class="flex justify-between items-center border-t pt-4">
+                                <span class="text-xl font-bold text-gray-800">$5,499</span>
+                                <a href="product.html"
+                                    class="bg-primary/10 text-primary hover:bg-primary hover:text-white p-2 rounded-lg transition-colors"><i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Item 3 -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1579299718428-ba7bb6f387db?auto=format&fit=crop&q=80&w=600"
+                                alt="Product"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs text-gray-500 mb-1">Swim Spa</div>
+                            <h3 class="text-lg font-bold mb-2"><a href="product.html"
+                                    class="hover:text-primary transition-colors">Olympian Swim Series</a></h3>
+                            <div class="flex items-center gap-1 text-accent mb-3 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-regular fa-star"></i>
+                                <span class="text-gray-500 ml-1">(12)</span>
+                            </div>
+                            <div class="flex justify-between items-center border-t pt-4">
+                                <span class="text-xl font-bold text-gray-800">$12,999</span>
+                                <a href="product.html"
+                                    class="bg-primary/10 text-primary hover:bg-primary hover:text-white p-2 rounded-lg transition-colors"><i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-12 flex justify-center gap-2">
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center bg-primary text-white font-bold shadow-md">1</button>
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors font-bold">2</button>
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors font-bold">3</button>
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-300 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-water text-primary"></i> AquaRelax
+            </a>
+            <p class="mb-4">&copy; 2026 AquaRelax Hot Tubs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

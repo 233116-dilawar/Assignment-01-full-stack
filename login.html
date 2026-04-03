@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#0284c7', accent: '#f59e0b' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-shake { animation: shake 0.5s; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25%, 75% { transform: translateX(-5px); } 50% { transform: translateX(5px); } }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased font-sans flex items-center justify-center min-h-screen relative overflow-hidden">
+    
+    <!-- Background Decor -->
+    <div class="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+        <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-secondary/20 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="z-10 w-full max-w-md p-4">
+        <div class="text-center mb-8">
+            <a href="index.html" class="text-3xl font-bold text-secondary flex items-center justify-center gap-2">
+                <i class="fa-solid fa-water"></i> AquaRelax
+            </a>
+            <p class="text-gray-500 mt-2">Welcome back! Please login to your account.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-white/50 backdrop-blur-sm">
+            <form class="space-y-6 validate-form" action="my_account.html" method="GET">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-regular fa-envelope text-gray-400"></i>
+                        </div>
+                        <input type="email" name="email" required class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-gray-50 focus:bg-white text-gray-800">
+                    </div>
+                    <p class="error-msg text-red-500 text-sm mt-1 hidden"></p>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <label class="block text-sm font-medium text-gray-700">Password</label>
+                        <a href="forget_password.html" class="text-xs text-primary hover:text-secondary font-semibold transition-colors">Forgot password?</a>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-lock text-gray-400"></i>
+                        </div>
+                        <input type="password" name="password" required class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-gray-50 focus:bg-white text-gray-800">
+                    </div>
+                    <p class="error-msg text-red-500 text-sm mt-1 hidden"></p>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" id="remember" class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary accent-primary">
+                    <label for="remember" class="ml-2 text-sm text-gray-600">Remember me</label>
+                </div>
+
+                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5">Log In</button>
+            </form>
+            
+            <div class="mt-8 text-center text-sm text-gray-600">
+                Don't have an account? <a href="register.html" class="text-primary font-bold hover:underline">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

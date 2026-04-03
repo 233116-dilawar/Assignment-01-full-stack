@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax | Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#0284c7', accent: '#f59e0b' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+    
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-secondary flex items-center gap-2">
+                <i class="fa-solid fa-water"></i> AquaRelax
+            </a>
+            <nav class="hidden md:flex gap-6 font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="category.html" class="hover:text-primary transition-colors">Hot Tubs</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="my_account.html" class="text-gray-600 hover:text-primary"><i class="fa-regular fa-user text-xl"></i></a>
+                <a href="cart.html" class="text-primary relative">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-28 pb-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold mb-8">Shopping Cart</h1>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Cart Items -->
+                <div class="w-full lg:w-2/3">
+                    <div class="bg-white rounded-2xl shadow-sm p-6 mb-4">
+                        <!-- Headings -->
+                        <div class="hidden md:grid grid-cols-6 gap-4 border-b pb-4 mb-4 text-gray-500 font-medium">
+                            <div class="col-span-3">Product</div>
+                            <div class="text-center">Price</div>
+                            <div class="text-center">Quantity</div>
+                            <div class="text-right">Total</div>
+                        </div>
+
+                        <!-- Item 1 -->
+                        <div class="grid grid-cols-1 md:grid-cols-6 gap-4 items-center border-b pb-6 mb-6">
+                            <div class="col-span-3 flex gap-4 items-center">
+                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=100" alt="Hot Tub" class="w-20 h-20 object-cover rounded-lg">
+                                <div>
+                                    <h3 class="font-bold text-lg"><a href="product.html" class="hover:text-primary transition-colors">Cozy Relaxer Model X</a></h3>
+                                    <p class="text-sm text-gray-500">Cabinet: Dark Espresso</p>
+                                    <button class="text-red-500 text-sm hover:underline mt-1"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
+                                </div>
+                            </div>
+                            <div class="md:text-center text-gray-800 font-semibold mt-2 md:mt-0">$3,999.00</div>
+                            <div class="flex justify-center mt-2 md:mt-0">
+                                <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden w-24">
+                                    <button class="px-2 py-1 bg-gray-100 hover:bg-gray-200">-</button>
+                                    <input type="number" value="1" class="w-full text-center outline-none border-x border-gray-300 py-1 text-sm bg-white">
+                                    <button class="px-2 py-1 bg-gray-100 hover:bg-gray-200">+</button>
+                                </div>
+                            </div>
+                            <div class="md:text-right font-bold text-lg text-gray-900 mt-2 md:mt-0">$3,999.00</div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="grid grid-cols-1 md:grid-cols-6 gap-4 items-center pb-2">
+                            <div class="col-span-3 flex gap-4 items-center">
+                                <img src="https://images.unsplash.com/photo-1510006733918-24cc54181fbd?auto=format&fit=crop&q=80&w=100" alt="Cover" class="w-20 h-20 object-cover rounded-lg">
+                                <div>
+                                    <h3 class="font-bold text-lg">Premium Thermal Cover</h3>
+                                    <p class="text-sm text-gray-500">Size: Standard</p>
+                                    <button class="text-red-500 text-sm hover:underline mt-1"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
+                                </div>
+                            </div>
+                            <div class="md:text-center text-gray-800 font-semibold mt-2 md:mt-0">$299.00</div>
+                            <div class="flex justify-center mt-2 md:mt-0">
+                                <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden w-24">
+                                    <button class="px-2 py-1 bg-gray-100 hover:bg-gray-200">-</button>
+                                    <input type="number" value="1" class="w-full text-center outline-none border-x border-gray-300 py-1 text-sm bg-white">
+                                    <button class="px-2 py-1 bg-gray-100 hover:bg-gray-200">+</button>
+                                </div>
+                            </div>
+                            <div class="md:text-right font-bold text-lg text-gray-900 mt-2 md:mt-0">$299.00</div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <a href="category.html" class="text-primary hover:text-secondary font-semibold"><i class="fa-solid fa-arrow-left mr-1"></i> Continue Shopping</a>
+                        <button class="border border-gray-300 text-gray-600 hover:bg-gray-100 px-4 py-2 rounded-lg font-semibold transition-colors"><i class="fa-solid fa-rotate mr-1"></i> Update Cart</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="w-full lg:w-1/3">
+                    <div class="bg-white rounded-2xl shadow-sm p-6 sticky top-28">
+                        <h3 class="font-bold text-xl mb-4 border-b pb-4">Order Summary</h3>
+                        
+                        <div class="space-y-3 mb-6 font-medium text-gray-600">
+                            <div class="flex justify-between">
+                                <span>Subtotal</span>
+                                <span class="text-gray-900">$4,298.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Shipping Estimate</span>
+                                <span class="text-green-500">Free</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Tax Estimate</span>
+                                <span class="text-gray-900">$343.84</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t pt-4 mb-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-lg">Total</span>
+                                <span class="font-bold text-2xl text-gray-900">$4,641.84</span>
+                            </div>
+                        </div>
+
+                        <a href="payment.html" class="block w-full bg-primary hover:bg-secondary text-white text-center font-bold py-3 rounded-lg shadow-md transition-colors">Proceed to Checkout</a>
+                        
+                        <div class="mt-4 flex flex-col gap-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-500 justify-center">
+                                <i class="fa-solid fa-lock"></i> Secure encrypted checkout
+                            </div>
+                            <div class="flex justify-center gap-2 mt-2">
+                                <i class="fa-brands fa-cc-visa text-2xl text-blue-800"></i>
+                                <i class="fa-brands fa-cc-mastercard text-2xl text-red-600"></i>
+                                <i class="fa-brands fa-cc-paypal text-2xl text-blue-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-water text-primary"></i> AquaRelax
+            </a>
+            <p class="mb-4">&copy; 2026 AquaRelax Hot Tubs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

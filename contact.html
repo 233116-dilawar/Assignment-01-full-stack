@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax | Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#0284c7', accent: '#f59e0b' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-shake { animation: shake 0.5s; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25%, 75% { transform: translateX(-5px); } 50% { transform: translateX(5px); } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+    
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-secondary flex items-center gap-2">
+                <i class="fa-solid fa-water"></i> AquaRelax
+            </a>
+            <nav class="hidden md:flex gap-6 font-medium text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="category.html" class="hover:text-primary transition-colors">Hot Tubs</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+                <a href="contact.html" class="text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="my_account.html" class="text-gray-600 hover:text-primary"><i class="fa-regular fa-user text-xl"></i></a>
+                <a href="cart.html" class="text-gray-600 hover:text-primary relative">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full left-0 border-t">
+            <div class="flex flex-col p-4 font-medium">
+                <a href="index.html" class="py-2">Home</a>
+                <a href="category.html" class="py-2">Hot Tubs</a>
+                <a href="about.html" class="py-2">About Us</a>
+                <a href="contact.html" class="py-2 text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-20">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-16 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+                <h1 class="text-5xl font-bold text-gray-800 mb-4">Get in Touch</h1>
+                <div class="w-24 h-1 bg-primary mx-auto rounded mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Have questions about our hot tubs? Need support? We're here to help.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-100">
+                <div class="p-8 md:p-12 bg-primary text-white">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <p class="mb-8 opacity-90">Fill out the form and our team will get back to you within 24 hours.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"><i class="fa-solid fa-phone text-xl"></i></div>
+                            <div>
+                                <p class="text-sm opacity-80">Phone</p>
+                                <p class="font-semibold">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"><i class="fa-solid fa-envelope text-xl"></i></div>
+                            <div>
+                                <p class="text-sm opacity-80">Email</p>
+                                <p class="font-semibold">support@aquarelax.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"><i class="fa-solid fa-location-dot text-xl"></i></div>
+                            <div>
+                                <p class="text-sm opacity-80">Location</p>
+                                <p class="font-semibold">123 Wellness Ave, Spa City, CA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8 md:p-12">
+                    <form class="space-y-6 validate-form validate-form" action="#" method="POST">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                            <p class="error-msg text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                            <p class="error-msg text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <select name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-white">
+                                <option value="">Select a subject</option>
+                                <option value="Sales">Sales Inquiry</option>
+                                <option value="Support">Technical Support</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <p class="error-msg text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"></textarea>
+                            <p class="error-msg text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg shadow-md transition-colors">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center justify-center gap-2 mb-4">
+                <i class="fa-solid fa-water text-primary"></i> AquaRelax
+            </a>
+            <p class="mb-4">&copy; 2026 AquaRelax Hot Tubs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

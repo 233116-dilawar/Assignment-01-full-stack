@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaRelax Hot Tubs | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#0284c7',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-shake { animation: shake 0.5s; }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+    
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300">
+        <div class="bg-primary text-white text-sm py-1">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <span>Free shipping on all hot tubs. Limited time!</span>
+                <div class="flex gap-4">
+                    <a href="login.html" class="hover:text-gray-200">Login</a>
+                    <a href="register.html" class="hover:text-gray-200">Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white/95 backdrop-blur-md shadow-sm">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-secondary flex items-center gap-2">
+                    <i class="fa-solid fa-water"></i> AquaRelax
+                </a>
+                
+                <nav class="hidden md:flex gap-6 font-medium text-gray-600">
+                    <a href="index.html" class="text-primary hover:text-primary transition-colors">Home</a>
+                    <a href="category.html" class="hover:text-primary transition-colors">Hot Tubs</a>
+                    <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+                    <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <a href="my_account.html" class="text-gray-600 hover:text-primary"><i class="fa-regular fa-user text-xl"></i></a>
+                    <a href="cart.html" class="text-gray-600 hover:text-primary relative">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-xl"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full left-0 border-t">
+            <div class="flex flex-col p-4 font-medium">
+                <a href="index.html" class="py-2 text-primary">Home</a>
+                <a href="category.html" class="py-2">Hot Tubs</a>
+                <a href="about.html" class="py-2">About Us</a>
+                <a href="contact.html" class="py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24">
+        <!-- Hero Section -->
+        <section class="relative h-[600px] flex items-center bg-gray-900 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555029462-81788c2f1fba?auto=format&fit=crop&q=80&w=2000" alt="Hot Tub" class="absolute w-full h-full object-cover opacity-60">
+            <div class="relative container mx-auto px-4 z-10 text-white animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">Ultimate Relaxation at Home</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl drop-shadow-md">Discover our premium range of hot tubs designed to melt your stress away.</p>
+                <a href="category.html" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">Shop Now</a>
+            </div>
+        </section>
+
+        <!-- Categories preview -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Top Categories</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto rounded"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Category 1 -->
+                    <div class="group cursor-pointer rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-100">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800" alt="2-4 Person" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors duration-500"></div>
+                        </div>
+                        <div class="p-6 bg-white z-10 relative -mt-4 mx-4 rounded-xl shadow-lg group-hover:-translate-y-4 transition-transform duration-300">
+                            <h3 class="text-xl font-bold mb-2">2-4 Person Tubs</h3>
+                            <a href="category.html" class="text-primary font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                     <!-- Category 2 -->
+                     <div class="group cursor-pointer rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-200">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1510006733918-24cc54181fbd?auto=format&fit=crop&q=80&w=800" alt="5-7 Person" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors duration-500"></div>
+                        </div>
+                        <div class="p-6 bg-white z-10 relative -mt-4 mx-4 rounded-xl shadow-lg group-hover:-translate-y-4 transition-transform duration-300">
+                            <h3 class="text-xl font-bold mb-2">5-7 Person Tubs</h3>
+                            <a href="category.html" class="text-primary font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                     <!-- Category 3 -->
+                     <div class="group cursor-pointer rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-300">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1579299718428-ba7bb6f387db?auto=format&fit=crop&q=80&w=800" alt="Swim Spas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors duration-500"></div>
+                        </div>
+                        <div class="p-6 bg-white z-10 relative -mt-4 mx-4 rounded-xl shadow-lg group-hover:-translate-y-4 transition-transform duration-300">
+                            <h3 class="text-xl font-bold mb-2">Swim Spas</h3>
+                            <a href="category.html" class="text-primary font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-white flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-water text-primary"></i> AquaRelax
+                </a>
+                <p class="mb-4">Bringing the ultimate relaxation and luxury to your doorstep with our premium hot tubs.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="category.html" class="hover:text-primary transition-colors">Shop Hot Tubs</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    <li><a href="terms.html" class="hover:text-primary transition-colors">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Account</h4>
+                <ul class="space-y-2">
+                    <li><a href="my_account.html" class="hover:text-primary transition-colors">My Profile</a></li>
+                    <li><a href="order_summary.html" class="hover:text-primary transition-colors">Order History</a></li>
+                    <li><a href="login.html" class="hover:text-primary transition-colors">Login / Register</a></li>
+                    <li><a href="cart.html" class="hover:text-primary transition-colors">Shopping Cart</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Newsletter</h4>
+                <p class="mb-4">Subscribe to get special offers and updates.</p>
+                <form class="flex validate-form">
+                    <input type="email" placeholder="Your Email" required class="px-4 py-2 w-full rounded-l-md outline-none text-gray-800">
+                    <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r-md text-white font-semibold transition-colors"><i class="fa-solid fa-paper-plane"></i></button>
+                    <div class="error-msg text-red-400 text-xs mt-1 hidden w-full"></div>
+                </form>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+            &copy; 2026 AquaRelax Hot Tubs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
